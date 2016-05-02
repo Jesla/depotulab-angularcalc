@@ -1,10 +1,10 @@
 <!doctype html>
 <html ng-app="angularCalculator">
     <head>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/controllers.js"></script>
+        <script src="main.js"></script>
+        <script src="controllers.js"></script>
     </head>
     <body>
         <div class="container">
@@ -13,13 +13,13 @@
             </div>
         </div>
         <div ng-controller="angularCalcController">
-            <input type="number" class="input" , placeholder="Operand 1" , ng-model="firstOperandInput"></input>
-            <input type="number" class="input" , placeholder="Operand 2" , ng-model="secondOperandInput"></input>
-            <button class="button" ng-click="plusButton()">+</button>
-            <button class="button" ng-click="subtractButton()">-</button>
-            <button class="button" ng-click="multiplyButton()">*</button>
-            <button class="button" ng-click="divideButton()">/</button>
-            <p></p>
+            <input type="number" class="input" , placeholder="Operand 1" , ng-model="operand1"></input>
+            <input type="number" class="input" , placeholder="Operand 2" , ng-model="operand2"></input>
+            <button class="button" ng-click="plusButton(operand1, operand2)">+</button>
+            <button class="button" ng-click="subtractButton(operand1, operand2)">-</button>
+            <button class="button" ng-click="multiplyButton(operand1, operand2)">*</button>
+            <button class="button" ng-click="divideButton(operand1, operand2)">/</button>
+            <p ng-bind="result"></p>
         </div>
     </body>
 </html>
